@@ -5,7 +5,7 @@ $: << File.expand_path(File.join(File.dirname(__FILE__), '..', 'lib'))
 require 'query_string_parser'
 
 describe 'QueryStringParser' do
-  include AideRSS::QueryStringParser
+  include QueryStringParser
 
   it 'should parse a well formed query string' do
     h = qs_parse('a=b&c=d&e=f')

@@ -123,8 +123,7 @@ pr_query_parser(VALUE self, VALUE query_string, VALUE delim)
 void
 Init_pr_query_parser(void)
 {
-    VALUE AideRSS = rb_define_module("AideRSS");
-    VALUE QueryStringParser = rb_define_module_under(AideRSS, "QueryStringParser");
+    VALUE QueryStringParser = rb_define_module("QueryStringParser");
 
     rb_define_module_function(QueryStringParser, "pr_query_parser", pr_query_parser, 2);
 }
