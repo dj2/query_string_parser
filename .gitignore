@@ -2,4 +2,4 @@ ext/Makefile
 ext/mkmf.log
 ext/pr_query_parser.o
 *.bundle
-
+pkg

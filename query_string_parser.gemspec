@@ -18,7 +18,6 @@ Gem::Specification.new do |s|
      "ext/extconf.rb",
      "ext/pr_query_parser.c",
      "lib/query_string_parser.rb",
-     "query_string_parser.rb",
      "spec/query_string_parser_spec.rb"
   ]
   s.homepage = %q{http://github.com/dj2/query_string_parser}

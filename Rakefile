@@ -74,7 +74,6 @@ begin
       "ext/extconf.rb",
       "ext/pr_query_parser.c",
       "lib/query_string_parser.rb",
-      "query_string_parser.rb",
       "spec/query_string_parser_spec.rb"
     ]
     s.extensions << 'ext/extconf.rb'
