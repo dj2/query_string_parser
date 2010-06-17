@@ -1,0 +1,22 @@
+Query String Parser
+===================
+
+We parse a lot of queries at PostRank Inc. The time taken to parse those queries starts to add up.
+Eventually we got to the point where we decided to create a simple C based parser. Hence, QueryStringParser.
+
+A more detailed explanation of the origins can be found at: http://everburning.com/news/introducing-querystringparser
+
+Usage is pretty simple, you can either call the function against the QueryStringParser module, or include
+the module into your code. There is only one method, qs_parse.
+
+  require 'query_string_parser'
+  QueryStringParser.qs_parse("my=query&string=parser")
+  => {"my"=>"query", "string"=>"parser"}
+
+  include QueryStringParser
+  qs_parse("does[]=array&does[]=data&does[3]=values&does=more")
+  => {"does"=>["array", "data", "values", "more"]}
+
+
+Questions, comments, drop me a line. dj2 at everburning dot com
+
