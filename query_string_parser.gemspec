@@ -5,14 +5,18 @@
 
 Gem::Specification.new do |s|
   s.name = %q{query_string_parser}
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["dan sinclair"]
-  s.date = %q{2010-06-15}
+  s.date = %q{2010-09-02}
   s.description = %q{Simple query string parser}
   s.email = %q{dj2@everburning.com}
   s.extensions = ["ext/extconf.rb", "ext/extconf.rb"]
+  s.extra_rdoc_files = [
+    "LICENSE",
+     "README"
+  ]
   s.files = [
     "Rakefile",
      "ext/extconf.rb",
@@ -23,7 +27,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/dj2/query_string_parser}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.6}
+  s.rubygems_version = %q{1.3.5}
   s.summary = %q{Simple query string parser}
   s.test_files = [
     "spec/query_string_parser_spec.rb"
