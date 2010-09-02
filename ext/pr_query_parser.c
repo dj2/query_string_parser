@@ -93,19 +93,23 @@ pr_query_parser(VALUE self, VALUE query_string, VALUE delim)
 
     params = rb_hash_new();
     qs = strdup(RSTRING_PTR(query_string));
-    for (s = qs, p = qs, key = qs; *p != 0; p++)
+    for (s = qs, p = qs; *p != 0; p++)
     {
         if (*p == delimiter)
         {
+            *p = 0;
             if (key != NULL)
             {
-                *p = 0;
                 pr_set_param(params, key, s);
+                key = NULL;
+            }
+            else
+            {
+                pr_set_param(params, s, s);
             }
             s = (p + 1);
-            key = s;
         }
-        else if (*p == '=')
+        else if ((*p == '=') && (key == NULL))
         {
             *p = 0;
             key = s;
@@ -113,7 +117,11 @@ pr_query_parser(VALUE self, VALUE query_string, VALUE delim)
         }
     }
 
-    if (key != NULL) pr_set_param(params, key, s);
+    if (s != NULL)
+    {
+        if (key != NULL) pr_set_param(params, key, s);
+        else pr_set_param(params, s, s);
+    }
     free(qs);
 
     return params;

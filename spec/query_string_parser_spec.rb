@@ -163,4 +163,14 @@ describe 'QueryStringParser' do
     h['feed_id'][0].should == '2e2b55b3058696ccbe633e7241d53b16'
     h['feed_id'][1].should == '0381dd0545852d28d82ad7d0befbfd92'
   end
+
+  context 'improper escaping' do
+    it 'handles ? and = in query params' do
+      h = qs_parse('appkey=Test&id=http://xkcd.com/530?utm=a&bar=baz')
+      h.keys.length.should == 3
+      h['appkey'].should == 'Test'
+      h['id'].should == 'http://xkcd.com/530?utm=a'
+      h['bar'].should == 'baz'
+    end
+  end
 end
